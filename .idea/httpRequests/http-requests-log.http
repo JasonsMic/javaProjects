@@ -1,0 +1,72 @@
+POST http://localhost:8080/user/delUser
+Accept: */*
+Cache-Control: no-cache
+
+"userName":"zhangsan"
+
+<> 2018-08-23T052445.200.txt
+
+###
+
+POST http://localhost:8080/user/add
+Accept: */*
+Cache-Control: no-cache
+userName: 测试一
+password: 022578
+phone: 123455
+
+name
+
+###
+
+POST http://localhost:8080/user/add
+Accept: */*
+Cache-Control: no-cache
+userName: 测试一
+password: 022578
+phone: 123455
+
+name
+
+###
+
+POST http://localhost:8080/user/add
+Accept: */*
+Cache-Control: no-cache
+userName: 测试一
+password: 022578
+phone: 123455
+
+name
+
+<> 2018-08-22T053314.500.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: */*
+Cache-Control: no-cache
+userName: 测试一
+password: 022578
+phone: 123455
+
+name
+
+<> 2018-08-22T053240.500.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: */*
+Cache-Control: no-cache
+userId: 1
+userName: 测试一
+password: 022578
+phone: 123455
+
+name
+
+<> 2018-08-22T053042.500.json
+
+###
+

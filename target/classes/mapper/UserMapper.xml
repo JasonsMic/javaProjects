@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo1.dao.UserDao" >
+    
+    <resultMap id="BaseResultMap" type="com.example.demo1.model.User">
+        <result property="userId" column="user_id" jdbcType="INTEGER"/>
+        <result property="userName" column="user_name" jdbcType="VARCHAR"/>
+        <result property="password" column="pass_word" jdbcType="VARCHAR"/>
+        <result property="phone" column="user_phone" jdbcType="VARCHAR"/>
+    </resultMap>
+    
+    
+  <sql id="BASE_TABLE">
+    t_user
+  </sql>
+
+    <sql id="BASE_COLUMN">
+    user_id,user_name,pass_word,user_phone
+  </sql>
+
+
+
+    <insert id="insert" parameterType="com.example.demo1.model.User">
+        INSERT INTO
+        <include refid="BASE_TABLE"/>
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            user_name,pass_word,
+            <if test="phone != null">
+                user_phone,
+            </if>
+        </trim>
+        <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+            #{userName, jdbcType=VARCHAR},#{password, jdbcType=VARCHAR},
+            <if test="phone != null">
+                #{phone, jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <select id="selectUsers" resultType="com.example.demo1.model.User">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM
+        <include refid="BASE_TABLE"/>
+    </select>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        select
+        <include refid="BASE_COLUMN"/>
+        from
+        <include refid="BASE_TABLE"/>
+    </select>
+
+
+</mapper>

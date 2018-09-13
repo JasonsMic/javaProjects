@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+
+
+<span id="result">值：</span>
+
+</body>
+<script>
+    var MathTest = function (x, y) {
+        var x = x;
+        var y = y;
+        var add = function () {
+            return x + y;
+        }
+        return add;
+    }
+    var x = MathTest(3,4);
+    console.log(MathTest(4,5)());
+    alert(typeof(x));
+    /* x得到的是一个function  */
+
+    document.getElementById("result").innerText = "1234";
+
+   /* var Demo = function(){
+        var demoInteriorFunc = function(){
+            return "demoInteriorFunc";
+        }
+        return demoInteriorFunc;
+    }
+
+    var demoInstance =  Demo();
+    var demoInstance1 = Demo()();
+
+    console.log(demoInstance);
+    console.log(demoInstance1);*/
+
+    /*var max = 10,
+    fu = function (x) {
+            if(x > max){
+                console.log(x);
+            }
+    }
+
+    (function (f) {
+        var max = 100;
+        f(15);
+    })(fu);*/
+
+
+
+
+</script>
+</html>
